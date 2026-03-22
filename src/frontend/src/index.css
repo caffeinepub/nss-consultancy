@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Navy dark backgrounds */
+    --navy: 0.18 0.055 253;
+    --navy-mid: 0.22 0.09 258;
+    --navy-card: 0.2 0.065 248;
+
+    /* Amber accent */
+    --amber: 0.73 0.155 65;
+    --amber-light: 0.81 0.135 75;
+
+    /* Section backgrounds */
+    --bg-light: 0.965 0.006 240;
+    --bg-green-tint: 0.955 0.018 155;
+    --bg-cream: 0.984 0.016 80;
+    --bg-warm: 0.982 0.012 50;
+
+    /* shadcn semantic tokens */
+    --background: 1 0 0;
+    --foreground: 0.145 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+    --primary: 0.73 0.155 65;
+    --primary-foreground: 0.18 0.055 253;
+    --secondary: 0.97 0 0;
+    --secondary-foreground: 0.205 0 0;
+    --muted: 0.97 0 0;
+    --muted-foreground: 0.556 0 0;
+    --accent: 0.97 0 0;
+    --accent-foreground: 0.205 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.005 240;
+    --input: 0.9 0.005 240;
+    --ring: 0.73 0.155 65;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.205 0 0;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-weight: 800;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+  .font-body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  .text-amber-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--amber)) 0%,
+      oklch(var(--amber-light)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .bg-navy {
+    background-color: oklch(var(--navy));
+  }
+  .bg-navy-gradient {
+    background: radial-gradient(
+        ellipse at 20% 50%,
+        oklch(0.24 0.09 258 / 0.5) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse at 80% 20%,
+        oklch(0.73 0.155 65 / 0.12) 0%,
+        transparent 40%
+      ), oklch(var(--navy));
+  }
+  .bg-navy-card {
+    background-color: oklch(var(--navy-card));
+  }
+  .bg-section-light {
+    background-color: oklch(var(--bg-light));
+  }
+  .bg-section-green {
+    background-color: oklch(var(--bg-green-tint));
+  }
+  .bg-section-cream {
+    background-color: oklch(var(--bg-cream));
+  }
+  .bg-section-warm {
+    background-color: oklch(var(--bg-warm));
+  }
+  .text-amber {
+    color: oklch(var(--amber));
+  }
+  .text-amber-light {
+    color: oklch(var(--amber-light));
+  }
+  .bg-amber {
+    background-color: oklch(var(--amber));
+  }
+  .bg-amber-hover:hover {
+    background-color: oklch(var(--amber-light));
+  }
+  .border-amber {
+    border-color: oklch(var(--amber));
+  }
+  .border-amber-dim {
+    border-color: oklch(var(--amber) / 0.3);
+  }
+  .pulse-dot {
+    animation: pulseDot 2s infinite;
+  }
+  @keyframes pulseDot {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot {
+      animation: none;
+    }
+  }
+}
