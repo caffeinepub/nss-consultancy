@@ -273,7 +273,10 @@ function HeroSection({ smoothScroll }: { smoothScroll: (id: string) => void }) {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl p-6 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm">
+        <div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-xl p-6 rounded-2xl border border-[#FFFE71]"
+          style={{ background: "#FFFE71" }}
+        >
           <StatItem target={1000} suffix="+" label="Audits Completed" />
           <StatItem target={98} suffix="%" label="Accuracy Rate" />
           <StatItem target={45} suffix="+" label="Audit Staff" />
