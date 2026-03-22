@@ -163,3 +163,93 @@
     }
   }
 }
+
+/* ─── SCANNER GUN ANIMATION ─────────────────────────────────────────────── */
+.scanner-hero {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.scanner-gun {
+  width: 130px;
+  transform: rotate(18deg);
+  animation: floatGun 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 24px rgba(240, 165, 0, 0.35));
+}
+
+@keyframes floatGun {
+  0%,
+  100% {
+    transform: rotate(18deg) translateY(0);
+  }
+  50% {
+    transform: rotate(18deg) translateY(-10px);
+  }
+}
+
+.barcode-wrapper {
+  position: relative;
+  width: 260px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.barcode-img {
+  width: 100%;
+  display: block;
+}
+
+.laser {
+  position: absolute;
+  right: -140px;
+  width: 140px;
+  height: 4px;
+  background: linear-gradient(to left, transparent, #ff2d2d);
+  box-shadow: 0 0 12px #ff2d2d, 0 0 25px #ff2d2d;
+  animation: scanMove 2s ease-in-out infinite;
+}
+
+@keyframes scanMove {
+  0% {
+    top: 5%;
+  }
+  50% {
+    top: 85%;
+  }
+  100% {
+    top: 5%;
+  }
+}
+
+.scan-glow {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  background: radial-gradient(rgba(255, 45, 45, 0.25), transparent);
+  animation: glowMove 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glowMove {
+  0% {
+    top: 0%;
+  }
+  50% {
+    top: 75%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .scanner-hero {
+    display: none;
+  }
+}

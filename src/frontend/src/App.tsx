@@ -283,6 +283,94 @@ function HeroSection({ smoothScroll }: { smoothScroll: (id: string) => void }) {
           <StatItem target={40} suffix="+" label="Cities Covered" />
         </div>
       </div>
+      {/* Scanner Gun - Right Side */}
+      <div className="scanner-hero">
+        <div className="barcode-wrapper">
+          <svg
+            aria-hidden="true"
+            className="barcode-img"
+            viewBox="0 0 200 80"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect width="200" height="80" fill="#fff" rx="4" />
+            {[
+              2, 6, 10, 12, 16, 20, 22, 26, 30, 34, 36, 40, 44, 46, 50, 54, 56,
+              60, 64, 68, 70, 74, 78, 82, 86, 88, 92, 96, 98, 102, 106, 110,
+              112, 116, 120, 124, 126, 130, 134, 136, 140, 144, 148, 150, 154,
+              158, 160, 164, 168, 172, 174, 178, 182, 186, 188, 192, 196,
+            ].map((x, i) => (
+              <rect
+                key={`bar-${x}`}
+                x={x}
+                y="8"
+                width={i % 3 === 0 ? 3 : 2}
+                height="56"
+                fill="#1a2040"
+              />
+            ))}
+          </svg>
+          <div className="laser" />
+          <div className="scan-glow" />
+        </div>
+        <svg
+          aria-hidden="true"
+          className="scanner-gun"
+          viewBox="0 0 120 160"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="20"
+            y="10"
+            width="80"
+            height="50"
+            rx="10"
+            fill="#1a2040"
+            stroke="#f0a500"
+            strokeWidth="2"
+          />
+          <rect x="30" y="20" width="60" height="30" rx="6" fill="#0f1e4a" />
+          <rect
+            x="35"
+            y="27"
+            width="50"
+            height="16"
+            rx="3"
+            fill="#f0a500"
+            opacity="0.15"
+          />
+          <line
+            x1="38"
+            y1="35"
+            x2="82"
+            y2="35"
+            stroke="#f0a500"
+            strokeWidth="1.5"
+            opacity="0.6"
+          />
+          <rect
+            x="45"
+            y="60"
+            width="25"
+            height="60"
+            rx="8"
+            fill="#1a2040"
+            stroke="#f0a500"
+            strokeWidth="2"
+          />
+          <rect
+            x="50"
+            y="110"
+            width="30"
+            height="14"
+            rx="4"
+            fill="#0f1e4a"
+            stroke="#f0a500"
+            strokeWidth="1.5"
+          />
+          <circle cx="60" cy="35" r="6" fill="#f0a500" opacity="0.3" />
+          <circle cx="60" cy="35" r="3" fill="#f0a500" />
+        </svg>
+      </div>
     </section>
   );
 }
